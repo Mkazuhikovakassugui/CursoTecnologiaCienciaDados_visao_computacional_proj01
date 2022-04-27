@@ -28,12 +28,20 @@ cv2.imshow("Titulo_hsv", imagem) # exibe a imagem colorida inicial com as altera
 cv2.waitKey(2000)
 
 # Como visualizar a imagem com apenas uma das cores RGB
-# Por exemplo, manipularemos a imagem de modo que apenas a cor azul seja visualizada
+# Por exemplo, manipularemos a imagem de modo que apenas a cor azul seja visualizada ( note que o azul corresponde ao canal de cor 0)
 imagem = cv2.imread("mario.png") # carregamos a imagem
-b =  imagem.copy  # fazemos uma cópia da imagem original
-b[:,:,1]= 0 # pegamos todos os pixels da linhas da matriz, todos os pixels das colunas da matriz e as cores verdes (canal de cor 1) e atribuímos o valor 0
-b[:,:, 2]= 0 # pegamos todos os pixels da linhas da matriz, todos os pixels das colunas da matriz e as cores vermelhas (canal de cor 2) e atribuímos o valor 0
+b = imagem.copy()  # fazemos uma cópia da imagem original
+b[:, :, 1]= 0 # pegamos todos os pixels da linhas da matriz, todos os pixels das colunas da matriz e as cores verdes (canal de cor 1) e atribuímos o valor 0
+b[:, :, 2]= 0 # pegamos todos os pixels da linhas da matriz, todos os pixels das colunas da matriz e as cores vermelhas (canal de cor 2) e atribuímos o valor 0
 cv2.imshow("azul", b)
-cv2.waitKey(2000)
+cv2.waitKey(1000)
+
+# Retpetiir a análise acima para a cor verde
+g = imagem.copy() # fazemos uma copia da imagem original
+g[:, :, 0] = 0 # atribuimos 0 para os pixels de cor azul
+g[:, :, 2] = 0 # atribuimos 0 para os pixels de cor vermelha
+
+cv2.imshow("verde", g)
+cv2.waitKey(1000)
 
 
