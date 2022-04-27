@@ -36,12 +36,20 @@ b[:, :, 2]= 0 # pegamos todos os pixels da linhas da matriz, todos os pixels das
 cv2.imshow("azul", b)
 cv2.waitKey(1000)
 
-# Retpetiir a análise acima para a cor verde
+# Repetir a análise acima para a cor verde
 g = imagem.copy() # fazemos uma copia da imagem original
 g[:, :, 0] = 0 # atribuimos 0 para os pixels de cor azul
 g[:, :, 2] = 0 # atribuimos 0 para os pixels de cor vermelha
 
 cv2.imshow("verde", g)
+cv2.waitKey(1000)
+
+# Repetir a análise acima para a cor vermelha
+r = imagem.copy() # fazemos uma copia da imagem original
+r[:, :, 0] = 0 # atribuimos 0 para os pixels de cor azul
+r[:, :, 1] = 0 # atribuimos 0 para os pixels de cor verde
+
+cv2.imshow("vermelha", r)
 cv2.waitKey(1000)
 
 
